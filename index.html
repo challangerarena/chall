@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challangerarena || Online Gaming Arena</title>
+  <link rel="icon" type="image/png" href="./img/favicon.ico">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+  
+    body {
+      background-image: url("./img/back2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(24, 23, 23);
+      overflow-x: hidden;
+      white-space: nowrap;
+    }
+  
+    .co {
+      width: 100%;
+      max-width: 800px;
+      margin: -210px auto 0px;
+      padding: 0px;
+      text-align: center;
+      position: relative;
+    }
+  
+    .con {
+      width: 100%;
+      max-width: 800px;
+      margin: 17px auto 0px;
+      padding: 0px;
+      text-align: center;
+      position: relative;
+    }
+  
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 100px auto 0px;
+      padding: 0px;
+      text-align: center;
+      position: relative;
+    }
+  
+    h1 {
+      color: #ffffff;
+      font-size: 92px;
+      font-family: "Exo", sans-serif;
+      font-weight: bold;
+      margin: 0px;
+      padding-top: 165px;
+    }
+  
+    p {
+      color: #93FF0D;
+      font-size: 36px;
+      line-height: 1.5;
+      font-family: "Courier New", monospace;
+      margin-bottom: 0px;
+      position: relative;
+      left: 0px;
+      bottom: 0px;
+    }
+  
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.615);
+      background-size: cover;
+      z-index: -1;
+    }
+  
+    h2 {
+      color: #e11099;
+      font-size: 35px;
+      font-family: "Raleway", sans-serif;
+      margin-top: 24px;
+      margin-bottom: 50px;
+    }
+  
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      transform: rotate(-360deg);
+    }
+  
+    .hand {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 39px;
+      background-color: #fffbfb;
+      transform-origin: bottom;
+    }
+  
+    .han {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 39px;
+      background-color: #fffbfb;
+      transform-origin: bottom;
+    }
+  
+    .hands {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 39px;
+      background-color: #fffbfb;
+      transform-origin: bottom;
+    }
+  
+    @keyframes saat-don {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  
+    @keyframes saniye-don {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  
+    h1,
+    p,
+    h2 {
+      animation: fadeIn 5s ease-in-out;
+    }
+  
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1;
+    }
+  
+    .language-selector button {
+      color: #ffffff;
+      font-size: 16px;
+      font-family: "Raleway", sans-serif;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+    }
+  
+    @media (max-width: 600px) {
+      .container {
+        position: relative;
+        padding: 50px;
+      }
+  
+      h1 {
+        font-size: 48px;
+        padding-top: 160px;
+      }
+  
+      p {
+        font-size: 14px;
+        left: 0px;
+        bottom: 20px;
+        animation: none;
+      }
+  
+      h2 {
+        position: relative;
+        font-size: 24px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        top: -20px;
+        animation: none;
+      }
+    }
+    h3{
+
+        bottom: 17px;
+    position: relative;
+    margin: 25px auto;
+    left: 16px;
+    color: lightslategrey;
+    }
+  </style>
+  
+  <link href="https://fonts.googleapis.com/css?family=Exo:400,700|Raleway:400,700" rel="stylesheet">
+</head>
+<body>
+  <div class="language-selector">
+    <button onclick="changeLanguage('en')">EN</button>
+    <button onclick="changeLanguage('tr')">TR</button>
+  </div>
+  <div class="container">
+    <h2>Online Gaming Arena</h2>
+    <div class="co">
+      <h1>Just Imagine</h1>
+    </div>
+    <div class="con">
+        <h3>The under construction</h3><br>
+      <p id="countdown"></p>
+    </div>
+  </div>
+  <div class="logo">
+    <img class="logos" src="./img/logo.png" alt="Logo">
+
+  </div>
+
+  <script>
+  function changeLanguage(lang) {
+    var h1Element = document.querySelector('h1');
+    var h2Element = document.querySelector('h2');
+    var h3Element = document.querySelector('h3');
+    var countdownElement = document.getElementById("countdown");
+
+    if (lang === 'tr') {
+        h1Element.textContent = 'Sadece Hayal Et';
+        h2Element.textContent = 'Online Oyun Arenası';
+        h3Element.textContent = 'Yapım aşamasında';
+        
+        if (countdownElement) {
+            countdownElement.setAttribute("data-language", "tr");
+        }
+    } else if (lang === 'en') {
+        h1Element.textContent = 'Just Imagine';
+        h2Element.textContent = 'Online Gaming Arena';
+        h3Element.textContent = 'The under construction';
+        
+        if (countdownElement) {
+            countdownElement.setAttribute("data-language", "en");
+        }
+    }
+}
+
+function displayRealTime() {
+    var date = new Date();
+    var seconds = date.getSeconds();
+
+    // Dereceleri hesapla
+    var secondDegree = (seconds / 60) * 360;
+
+    // Saat ibrelerini döndür
+    var logosElement = document.querySelector('.logos');
+    if (logosElement) {
+        logosElement.style.transform = `rotate(${secondDegree}deg)`;
+    }
+
+    setTimeout(displayRealTime, 1000); // Her saniyede güncellenmesi için tekrar çağırılıyor
+}
+
+function countdownTimer() {
+    var countDownDate = new Date("2024-01-01T01:00:00").getTime();
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    var countdownElement = document.getElementById("countdown");
+
+    if (countdownElement) {
+        var language = countdownElement.getAttribute("data-language");
+
+        if (language === "tr") {
+            countdownElement.innerHTML = days + " gün " + hours + " saat " + minutes + " dakika " + seconds + " <br> saniye kaldı";
+        } else {
+            countdownElement.innerHTML = days + " days " + hours + " hours " + minutes + " minutes " + seconds + "<br> seconds remaining";
+        }
+
+        if (distance < 0) {
+            clearInterval(timer);
+            countdownElement.innerHTML = "Countdown has ended";
+        }
+    }
+}
+
+window.onload = function() {
+    changeLanguage('en'); // Dil seçimi yapıldığında güncelleyin
+    displayRealTime();
+    countdownTimer();
+    setInterval(countdownTimer, 1000);
+};
+
+
+  </script>
+</body>
+</html>
